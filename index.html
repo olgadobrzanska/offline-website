@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <title>Baza danych koktajli</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="rest.js"></script>
+  <meta charset="UTF-8">
+   <style type="text/css">
+    body {
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+     background-attachment: fixed;
+       background-image: url("image/background.jpg");
+    }
+  </style>
+</head>
+<body onload="checkSession();">
+  <header>
+    <nav>
+      <ul>
+        <li onclick="_listaKoktajli();">Koktajle</li>
+        <li onclick="_listaSkladnikow();">Składniki</a></li>
+        <li onclick="_listaMin();">Cena min/max koktajli</a></li>
+        <li onclick="_listaDiet();">Dietetycznie</a></li>
+        <li onclick="_userPanel();" id="userPanel">Panel użytkownika</li>
+         <li></li>
+         <li></li>
+        <li id="dietaOffline">Tabela Offline</li>
+       
+        <li id="synchronizacja">Synchronizacja</li>
+      </ul>
+    </nav>
+  </header>
+  <div align="center" style="background-color: white; padding-top: 50px; padding-bottom: 20px; color: black;">
+ <h1> Witamy w bazie danych koktajli!</h1>
+</div>
+  <div id="content">
+    <div id="contentNoFooter" style="background-color: white; opacity: 0.8;">
+      <div style="height: 60px;"></div>
+      <div id="data"></div>
+      <div id="result"></div>
+      <div id="addNewDieta" style="display: none;">
+        <table class="addDietaTable">
+          <thead><tr><td colspan="2">Dietetyczne</td></tr></thead>
+          <form method="post">
+          <tr>
+            <td class="leftColumn">Koktajl</td>
+            <td>
+              <input type="text" value="" pattern="[A-Za-z-0-9-._ ąćęłńóśźżĄĘŁŃÓŚŹŻ]+" name="koktajl" id="koktajl" required size="50"></td>
+            </td>
+          </tr>
+          <tr>
+            <td class="leftColumn">Kalorie</td>
+            <td>
+              <input type="text" value="" pattern="[0-9]+" name="kalorie" id="kalorie" required /> kcal
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center;"><button class="button button3" type="button" id='_addDieta' onclick="return false;">Dodaj koktajl</button></td>
+          </tr>
+          </form>
+        </table>
+        <span id="status"></span>
+      </div>
+    </div>
+    <footer>
+      Created by Olga Dobrzanska
+    </footer>
+  </div>
+</body>
+</html>
